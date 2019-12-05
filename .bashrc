@@ -121,13 +121,39 @@ export DEVKITARM=${DEVKITPRO}/devkitARM
 export DEVKITPPC=${DEVKITPRO}/devkitPPC
 export PATH=${DEVKITPRO}/tools/bin:$PATH
 
+export QUARTUS_ROOTDIR="$HOME/intelFPGA_lite/18.1/quartus"
+export PATH="$QUARTUS_ROOTDIR/linux64:$PATH"
+export PATH="$QUARTUS_ROOTDIR/../nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin:$PATH"
+export PATH="$QUARTUS_ROOTDIR/../nios2eds/bin:$PATH"
+export PATH="$QUARTUS_ROOTDIR/../nios2eds/sdk2/bin:$PATH"
+
+alias quartus="LD_LIBRARY_PATH=\"$QUARTUS_ROOTDIR/linux64\" quartus"
+alias nios2-download="LD_LIBRARY_PATH=\"$QUARTUS_ROOTDIR/linux64\" nios2-download"
+alias nios2-gdb-server="LD_LIBRARY_PATH=\"$QUARTUS_ROOTDIR/linux64\" nios2-gdb-server"
+alias nios2-configure-sof="LD_LIBRARY_PATH=\"$QUARTUS_ROOTDIR/linux64\" nios2-configure-sof"
+alias nios2-terminal="LD_LIBRARY_PATH=\"$QUARTUS_ROOTDIR/linux64\" nios2-terminal"
+alias jtagconfig='LD_LIBRARY_PATH="$HOME/intelFPGA_lite/18.1/quartus/linux64" jtagconfig'
+
+#export _JAVA_OPTIONS=-Duser.home=$HOME
+
+export PATH="$HOME/intelFPGA_pro/19.3/modelsim_ase/linux:$PATH"
+
+export SOPC_KIT_NIOS2="$QUARTUS_ROOTDIR/../nios2eds"
+export ANDROID_HOME="$HOME/Android/Sdk/"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/tools:$PATH"
+
+
 alias inst='sudo apt-get install -y'
 alias auto='sudo apt-get autoremove -y'
 alias cse='ssh -p 222 mandapam@129.252.130.174'
 alias ft='sftp -P 222 mandapam@129.252.130.174'
-alias lookup='cat ~/.bashrc | tail -n12'
+alias lookup='cat ~/.bashrc | tail -n14'
 alias edit='vim ~/.bashrc'
 alias repo='sudo add-apt-repository'
 alias dist='sudo apt-get dist-upgrade -y'
-alias rpcs='~/Desktop/RPCS3/rpcs3-v0.0.5-6541-5f047034_linux64.AppImage'
 alias cl='clear'
+alias qt='./csce611.sh gui'
+alias sm='./csce611.sh simulate'
+alias is='ionic serve'
+alias dev='ionic serve --devapp'
