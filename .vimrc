@@ -1,0 +1,11 @@
+set relativenumber
+set wrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set hlsearch
+set incsearch
+set autoindent
+set textwidth=80
+colorscheme koehler
