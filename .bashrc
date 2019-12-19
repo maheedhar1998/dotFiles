@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$PATH:/opt/mssql-tools/bin"
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=${DEVKITPRO}/devkitARM
 export DEVKITPPC=${DEVKITPRO}/devkitPPC
